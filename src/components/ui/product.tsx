@@ -5,8 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 export async function getProducts() {
-  const data = await fetch(`${baseEndpoint}/products`);
-  return (await data.json()) as Array<IProduct>;
+  try {
+    const data = await fetch(`${baseEndpoint}/products`);
+    return (await data.json()) as Array<IProduct>;
+  } catch (error) {
+    console.log("Something went wrong", error);
+  }
 }
 
 export const Product = async () => {
