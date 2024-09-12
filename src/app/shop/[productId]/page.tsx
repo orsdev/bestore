@@ -1,6 +1,6 @@
+import { getProducts } from "@/app/page";
 import { CenteredLayout } from "@/components/layout";
 import { ProductOverview, ProductSlider } from "@/components/product";
-import { getProducts } from "@/components/ui";
 import { IProduct } from "@/models";
 
 interface IProductPage {

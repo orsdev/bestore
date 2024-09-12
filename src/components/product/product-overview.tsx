@@ -23,7 +23,6 @@ export const ProductOverview = ({ product }: IProductOverview) => {
     addItemToCart(item as IProduct);
     toggleCart();
     toast({
-      title: "Cart",
       description: `${item.name} added to cart`,
     });
   };

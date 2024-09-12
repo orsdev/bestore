@@ -1,7 +1,18 @@
 import { FeaturedProducts, HomeHero } from "@/components/home";
 import { CenteredLayout } from "@/components/layout";
 import { Product, ProductCardSkeleton } from "@/components/ui";
+import { baseEndpoint } from "@/constants";
+import { IProduct } from "@/models";
 import { Suspense } from "react";
+
+export async function getProducts() {
+  try {
+    const data = await fetch(`${baseEndpoint}/products`);
+    return (await data.json()) as Array<IProduct>;
+  } catch (error) {
+    console.log("Something went wrong", error);
+  }
+}
 
 export default async function Home() {
   return (

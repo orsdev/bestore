@@ -1,20 +1,12 @@
-import { appRoutes, baseEndpoint } from "@/constants";
-import { IProduct } from "@/models";
+import { getProducts } from "@/app/page";
+import { appRoutes } from "@/constants";
 import { getDiscountedPrice } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-export async function getProducts() {
-  try {
-    const data = await fetch(`${baseEndpoint}/products`);
-    return (await data.json()) as Array<IProduct>;
-  } catch (error) {
-    console.log("Something went wrong", error);
-  }
-}
-
 export const Product = async () => {
   const products = await getProducts();
+
   return (
     <>
       {products?.map(({ name, price, image, product_id, discount, brand }) => (
