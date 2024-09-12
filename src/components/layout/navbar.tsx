@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="sticky z-50 top-0 left-0 w-full bg-white">
+      <header className="sticky z-50 top-0 left-0 w-full bg-slate-50">
         <CenteredLayout>
           <nav className="flex items-center justify-between">
             <Link className="flex flex-grow items-center" href="/">
