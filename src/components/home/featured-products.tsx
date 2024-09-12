@@ -30,7 +30,7 @@ export const FeaturedProducts = () => {
     >
       <CarouselContent>
         {images?.map((item) => (
-          <CarouselItem className="basis-1/3" key={item}>
+          <CarouselItem className="sm:basis-1/2 md:basis-1/3" key={item}>
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6 text-center">
                 <Image
