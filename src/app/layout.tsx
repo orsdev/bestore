@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 import { Navbar } from "@/components/layout";
+import NextTopLoader from "nextjs-toploader";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Bestore",
@@ -15,12 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <NextTopLoader />
         <Navbar />
         {children}
         <footer className="w-full bg-yellow-50 h-[60px] flex items-center mt-12 py-2 justify-center flex-col pt-3">
           <img className="w-[30px]" src="/images/logo.png" alt="logo" />
           <h3 className="text-lg text-red-500 cursive mt-1">BeStore</h3>
         </footer>
+        <Toaster />
       </body>
     </html>
   );
