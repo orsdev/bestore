@@ -1,5 +1,5 @@
 export const baseEndpoint =
-  process.env.Base_Endpoint ?? "https://fake-store-api.mock.beeceptor.com";
+  process.env.Base_Endpoint ?? "https://fake-store-api.mock.beeceptor.com/api";
 
 export const appRoutes = {
   index: () => "/",
