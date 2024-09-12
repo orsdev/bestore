@@ -2,9 +2,24 @@ import { getProducts } from "@/app/page";
 import { CenteredLayout } from "@/components/layout";
 import { ProductOverview, ProductSlider } from "@/components/product";
 import { IProduct } from "@/models";
+import { Metadata } from "next";
 
 interface IProductPage {
   params: { productId: string };
+}
+
+export async function generateMetadata({
+  params,
+}: IProductPage): Promise<Metadata> {
+  const product = await getProducts();
+  const findProduct = product?.find(
+    (item) => item.product_id.toString() === params?.productId,
+  );
+
+  return {
+    title: `Bestore | ${findProduct?.name}`,
+    openGraph: {},
+  };
 }
 
 export default async function ProductPage({ params }: IProductPage) {
