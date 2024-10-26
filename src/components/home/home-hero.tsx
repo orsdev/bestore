@@ -1,10 +1,19 @@
 import { appRoutes } from "@/constants";
+import Image from "next/image";
 import Link from "next/link";
 
 export const HomeHero = () => {
   return (
-    <section className="header-banner h-[550px] w-full bg-yellow-50 bg-[url('/images/bg.png')] bg-no-repeat bg-cover px-4">
-      <div className="flex flex-col items-center justify-center h-full">
+    <section className="header-banner h-[550px] w-full bg-yellow-50 px-4 overflow-hidden relative ">
+      <Image
+        src="/images/bg2.png"
+        alt="Smilling Lady in glasses"
+        className="w-full h-full object-cover"
+        quality={100}
+        priority={true}
+        fill
+      />
+      <div className="flex flex-col items-center justify-center h-full relative z-50">
         <h1 className="text-center text-3xl md:text-4xl lg:text-5xl text-gray-700 mx-auto max-w-[800px]">
           Elevate Your Style with
           <br /> Our New Collection

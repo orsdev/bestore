@@ -1,8 +1,8 @@
 import { getProducts } from "@/app/page";
 import { appRoutes } from "@/constants";
 import { getDiscountedPrice } from "@/utils";
-import Image from "next/image";
 import Link from "next/link";
+import CustomImage from "./custom-image";
 
 export const Product = async () => {
   const products = await getProducts();
@@ -21,14 +21,24 @@ export const Product = async () => {
                 -{discount}%
               </span>
             )}
-            <Image
+
+            <CustomImage
+              src={image}
+              alt={name}
+              width={250}
+              height={250}
+              className="w-full object-cover aspect-square"
+            />
+
+            {/* <Image
               src={image}
               alt={name}
               loading="lazy"
               width={250}
               height={250}
+              
               className="w-full object-cover aspect-square"
-            />
+            /> */}
           </div>
           <div className="px-4 flex flex-col">
             <p className="text-lg line-clamp-2 overflow-hidden mt-2">{name}</p>

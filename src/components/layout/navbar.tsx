@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CenteredLayout } from "./centered-layout";
 import { useCartStore } from "@/store";
 import { CartDrawer } from "./cart/cart-drawer";
+import { CursiveText } from "../ui";
 
 export const Navbar = () => {
   const { cartItems, toggleCart } = useCartStore((state) => state);
@@ -17,13 +18,14 @@ export const Navbar = () => {
             <Link className="flex flex-grow items-center" href="/">
               <img
                 className="w-[45px] cursor-pointer"
-                src="/images/logo.png"
+                src="/images/logo2.png"
                 alt="logo"
               />
               <div className="ml-2">
-                <h4 className="text-md">
-                  <span className="text-red-500 cursive">Be</span>Store
-                </h4>
+                <CursiveText className="inline-block">
+                  <span className="text-red-700 text-md">Be</span>
+                </CursiveText>
+                Store
               </div>
             </Link>
 

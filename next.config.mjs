@@ -8,13 +8,8 @@ const nextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: '**example.com'
-        }, 
-          {
-          protocol: 'https',
-          hostname: '**.dummyjson.com'
-        },
-
+          hostname: '*',
+        }
       ]
     }
   };
